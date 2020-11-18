@@ -2,7 +2,10 @@ const fieldRef = document.getElementById('validation-input');
 
 const validValue = fieldRef.dataset.length;
 fieldRef.addEventListener('blur', event => {
-  event.target.value.length === +validValue
-    ? fieldRef.setAttribute('class', 'valid')
-    : fieldRef.setAttribute('class', 'invalid');
+  const val = event.target.value.length === +validValue;
+  if (val) {
+    fieldRef.setAttribute('class', 'valid');
+  } else {
+    fieldRef.setAttribute('class', 'invalid');
+  }
 });
