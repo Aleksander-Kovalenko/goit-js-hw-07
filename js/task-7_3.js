@@ -16,19 +16,19 @@ const images = [
   },
 ];
 
-const galleryRef = document.querySelector('#gallery');
-const img = images.map(picture => {
-  const imgItem = document.createElement('li');
-  imgItem.classList.add('li-item');
+const getImgRef = document.getElementById('gallery');
 
-  const imgRef = document.createElement('img');
-  imgRef.src = picture.url;
-  imgRef.alt = picture.alt;
-  imgRef.width = 200;
+const exImg = images.map(elem => {
+  const newTeg = document.createElement('li');
+  const img = document.createElement('img');
+  newTeg.classList.add('animal-photo');
+  img.src = elem.url;
+  img.alt = elem.alt;
+  img.width = '200';
 
-  imgItem.append(imgRef);
-  return imgItem;
+  newTeg.append(img);
+
+  return newTeg;
 });
 
-galleryRef.append(...img);
-console.log(galleryRef);
+getImgRef.append(...exImg);
