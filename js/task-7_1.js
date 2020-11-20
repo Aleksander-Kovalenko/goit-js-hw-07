@@ -1,8 +1,9 @@
-const nameList = document.querySelectorAll('.item');
+const productListRef = document.getElementById('categories');
+const itemProductRef = document.querySelectorAll('.item');
 
-nameList.forEach(element => {
-  console.log(`Категория: ${element.firstElementChild.textContent}`);
+console.log(`В списке ${productListRef.childElementCount} категории`);
+itemProductRef.forEach(elem => {
   console.log(
-    `Количество элементов: ${element.lastElementChild.children.length}`,
+    `Категория: ${elem.firstElementChild.textContent} Количество элементов: ${elem.lastElementChild.childElementCount}`,
   );
 });
