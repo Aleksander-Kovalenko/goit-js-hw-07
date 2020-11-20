@@ -7,14 +7,13 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingredientsRef = document.querySelector('#ingredients');
+const shopListRef = document.getElementById('ingredients');
 
-const productList = ingredients.map(element => {
-  const listRef = document.createElement('li');
-  listRef.innerHTML = element;
+const shopElem = ingredients.map(elem => {
+  const newTeg = document.createElement('li');
+  newTeg.textContent = elem;
 
-  return listRef;
+  return newTeg;
 });
 
-ingredientsRef.append(...productList);
-console.log(ingredientsRef);
+shopListRef.append(...shopElem);
