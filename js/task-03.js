@@ -13,17 +13,12 @@ const images = [
   },
 ];
 
-const newArr = [...images].map(({ url, alt }) => {
-  const item = document.createElement("li");
-  const image = document.createElement("img");
-  item.style.marginRight = `${50}px`;
-  image.src = url;
-  image.alt = alt;
-  image.width = 240;
+const newArr = [...images]
+  .map(({ url, alt }) => {
+    return `<li><img src=${url} alt=${alt} width="240"></li>`;
+  })
+  .join("");
 
-  item.appendChild(image);
-
-  return item;
-});
-
-const gallery = document.getElementById("gallery").append(...newArr);
+const gallery = document
+  .getElementById("gallery")
+  .insertAdjacentHTML("beforebegin", newArr);
