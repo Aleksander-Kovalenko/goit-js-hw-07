@@ -6,5 +6,6 @@ const refs = {
 refs.inputField.addEventListener("input", onInputValue);
 
 function onInputValue(e) {
-  refs.textField.textContent = "" ? "незнакомец" : e.target.value;
+  const val = e.target.value;
+  refs.textField.textContent = val === "" ? "незнакомец" : e.target.value;
 }
